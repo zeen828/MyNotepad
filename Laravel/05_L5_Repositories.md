@@ -1,4 +1,4 @@
-# Laravel 5 Repositories
+# Laravel - L5 Repositories
 Laravel抽象結構
 
 ---

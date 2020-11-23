@@ -1,4 +1,4 @@
-# Laravel
+# Laravel-開始
 
 ## 凡事都要一個開頭
 
@@ -20,6 +20,11 @@
 > #### 透過Composer`直接安裝`
 >     composer create-project --prefer-dist laravel/laravel Project
 > 透過Composer直接建立新專案
+> 
+> `Project`：專案目錄名稱
+
+> #### 透過Composer`直接安裝`指定版本
+>     composer create-project --prefer-dist laravel/laravel Project 7.22.*
 > 
 > `Project`：專案目錄名稱
 

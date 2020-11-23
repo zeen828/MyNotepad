@@ -1,4 +1,4 @@
-# Git的指令備忘錄
+# Git - 說明
 
 ## 對專案建立Git Repository(檔案庫)
     git init
