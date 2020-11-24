@@ -30,14 +30,18 @@
 
 ---
 
+## Laravel `產生key`
+>     php artisan key:generate
+> .env產生一組新的KEY
+
 ## Laravel `Controller`
-建立
+> 建立Controller
 
 ---
 
 ## Laravel `Model`
 >     php artisan make:model Model/ModelName
-> 建立
+> 建立Model
 
 ---
 

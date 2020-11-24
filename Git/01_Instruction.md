@@ -40,3 +40,8 @@
 >     git --version
 
 ---
+
+## 還原最後的commit
+>     git reset --hard HEAD
+
+---
