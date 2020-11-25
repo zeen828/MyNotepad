@@ -44,3 +44,21 @@
 ## 查詢
 >     /api/v1/auth/client (Clinet Index)
 > 查詢所有client Service
+
+### 測試
+1. 建立整套
+```
+    php artisan make:entity Demo/Members
+```
+
+2. 開啟`Requests`下的授權
+```
+    public function authorize()
+    {
+        return true;
+    }
+```
+app\Http\Requests\Demo\MembersCreateRequest.php
+app\Http\Requests\Demo\MembersUpdateRequest.php
+
+3. 第三部
