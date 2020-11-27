@@ -7,6 +7,13 @@
 
 ---
 
+## 文件
+    php artisan apidoc:generate
+
+[參考](https://www.vnewin.com/day29-laravel-automatically-generates-api-files/)
+
+---
+
 ## Client
 >> ### 資料庫資料
 >> 資料庫有做加密處理無法直接在DB看到資料
@@ -203,3 +210,19 @@
 >> GET http://127.0.0.1:8000/api/demo/willtest
 >> ```
 >> Postman測試該路徑
+
+
+## API順序
+1. Auth > Get Token(取Client access_token)
+
+       /api/v1/auth/token
+
+2. Admin > User > Admin Logon(登入Admin)
+
+       /api/v1/admin/user/logon
+
+3. Auth > User Signature Login(驗證信箱檢查碼)
+
+       /api/v1/auth/user/signature/login
+
+4. 修改密碼
