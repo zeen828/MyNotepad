@@ -1,5 +1,12 @@
 # 公司文件 - 探索 - Laravel開發專案
 
+## 版本
+Laravel 7.22
+
+PHP 7.4
+
+---
+
 ## 安裝
 >     git pull
 >     composer install
@@ -212,17 +219,98 @@
 >> Postman測試該路徑
 
 
-## API順序
-1. Auth > Get Token(取Client access_token)
+## 建立一個Admin User API順序
+> ### 最大權限管理者
+> 1. Auth > Get Token（取Client access_token）
+> 
+>        /api/v1/auth/token
+> 
+> 2. Auth > User Login（取Admin User access_token）
+> 
+>        /api/v1/auth/user/login/admin
+> 
+> 3. Admin > User > Admin Logon（建立/登入Admin）
+> 
+>        /api/v1/admin/user/logon
+> 
+> 4. Admin > User > User Index（查Admin User清單）
+> 
+>        /api/v1/admin/user?page=1&row=15&start=2020-11-01&end=2021-12-30
+> 
+> 5. System > Authority > Interface > APIs（查權限清單）
+> 
+>        /api/v1/system/interface
+> 
+> 6. System > Authority > Grant Authority（發派Admin User權限）
+> 
+>        /api/v1/system/authority/grant/admin/3515611
+> 
+> 7. Admin > User > Resend Auth（重發Admin User認證信）
+> 
+>        /api/v1/admin/user/resend/auth/1294583
+ 
+> ### 新帳號
+> 1. Auth > Get Token（取Client access_token）
+> 
+>        /api/v1/auth/token
+> 
+> 2. Auth > User Signature Login（驗證信箱檢查碼）
+> 
+>        /api/v1/auth/user/signature/login
+> 
+> 3. Admin > Auth > Change Password（第一次設定密碼/修改密碼）
+> 
+>        /api/v1/admin/auth/password
+> 
+> 4. Auth > Get Token（取Client access_token）
+> 
+>        /api/v1/auth/token
+> 
+> 5. Auth > Get Token（取Client access_token）
+> 
+>        /api/v1/auth/token
+> 
+> 6. Auth > User Login（取Admin User access_token）
+> 
+>        /api/v1/auth/user/login/admin
+> 
+> 7. Admin > Auth > Admin Read Me（Admin User個人資訊）
+> 
+>        /api/v1/admin/auth/me
+> 
+> 8. Admin > Auth > Edit Profile（Admin User編輯個人資料）
+> 
+>        /api/v1/admin/auth/profile
 
-       /api/v1/auth/token
 
-2. Admin > User > Admin Logon(登入Admin)
 
-       /api/v1/admin/user/logon
 
-3. Auth > User Signature Login(驗證信箱檢查碼)
+# 開發
+1. 路由
+2. 模型(Model)
+   1. (Entity)
+   2. 倉庫(Repository)
+   3. 123
+3. 控制器(Controller)
+4. 示圖(View)
 
-       /api/v1/auth/user/signature/login
 
-4. 修改密碼
+
+> - MVC
+>     - Model (模型)
+>     - View (示圖)
+>     - Controller (控制器)
+> - L5-R (Repository-Service-Presenter)
+>     - Entity ()
+>     - Repository (倉庫)
+>         - Criteria ()
+>     - Presenter (呈現器)
+>     - Transform (轉換器)
+>     - Validator (驗證器)
+Repository Interface
+Repository Criteria Interface
+Cacheable Interface
+Presenter Interface
+Presentable
+Criteria Interface
+Transformable

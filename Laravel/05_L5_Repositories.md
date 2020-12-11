@@ -89,3 +89,5 @@ Laravel抽象結構
 [l5-repository 上手 « 關於網路那些事...](https://adon988.logdown.com/posts/7811868-l5-repository)
 
 [l5-repository的使用 - 台部落](https://www.twblogs.net/a/5bbd67732b71776bd30c48be)
+
+[l5-repository 组件 - 简书](https://www.jianshu.com/p/250c7833d2a6)
