@@ -131,4 +131,57 @@ npm run build-pro
 
 ---
 
-## 
+## Mixins(共用函式)-->(3.0建議改用Composition API)
+```
+export default {
+  data: () => ({
+    debug: false
+  }),
+  methods: {
+  }
+}
+```
+\src\mixins\customFun.js
+
+```
+// 自訂
+import '@/mixins/customFun.js'
+```
+\src\main.js
+
+[參考](https://v3.vuejs.org/guide/mixins.html)
+
+---
+
+## Cookie
+### 安裝
+```
+npm install vue-cookies --save
+```
+
+```
+import Vue from 'vue'
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
+```
+\src\main.js
+
+### 用法
+```
+// 元件中直接使用 來設定cookie
+this.$cookies.set('test', 'val', 60 * 60)
+// 元件中獲取方式
+this.$cookies.get('test') 
+// 刪除 cookie
+this.$cookies.remove('test')
+// 檢查key
+this.$cookies.isKey('test')
+// 獲取所有cookie名稱
+this.$cookies.keys()
+```
+
+[參考](https://blog.csdn.net/qq_35250826/article/details/106111768)
+
+---
+
+##
