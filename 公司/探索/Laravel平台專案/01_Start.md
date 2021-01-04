@@ -8,15 +8,26 @@ PHP 7.4
 ---
 
 ## 安裝
->     git pull
->     composer install
-> 需要安裝`Redis`
+> ```
+> git pull
+> composer install
+> //需要安裝`Redis`
+> php artisan migrate
+> php artisan db:seed
+> php artisan data:client-read
+> //1294583
+> php artisan data:client-add
+> // Admin Service, 1, yes
+> php artisan data:client-add
+> // Member Service, 1, yes
+> ```
 
 ---
 
 ## 文件
-    php artisan apidoc:generate
-
+```
+php artisan apidoc:generate
+```
 [參考](https://www.vnewin.com/day29-laravel-automatically-generates-api-files/)
 
 ---

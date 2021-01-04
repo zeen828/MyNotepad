@@ -88,12 +88,43 @@
 ## Laravel `清除緩存`
 >     composer clear-cache
 >     composer dump-autoload
->     php artisan cache:cache
->     php artisan view:cache
->     php artisan config:cache
->     php artisan route:cache
->
 >     php artisan cache:clear
 >     php artisan view:clear
 >     php artisan config:clear
 >     php artisan route:clear
+>
+>     php artisan cache:cache
+>     php artisan view:cache
+>     php artisan config:cache
+>     php artisan route:cache
+
+## mailtrap代理信箱設定
+```php
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=25
+MAIL_USERNAME=571853ad511c2f
+MAIL_PASSWORD=bca595bbab81c1
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=from@example.com
+MAIL_FROM_NAME=Example
+```
+
+```
+// Inboxes > list action > 設定 > SMTP Settings
+curl --ssl-reqd \
+--url 'smtp://smtp.mailtrap.io:2525' \
+--user '571853ad511c2f:bca595bbab81c1' \
+--mail-from from@example.com \
+--mail-rcpt to@example.com \
+```
+
+## 資料庫臨時關閉嚴格模式
+如果使用GROUP BY卻沒在SELECT有該欄位會因為嚴格模式報錯
+```
+Syntax error or access violation: 1055
+```
+```PHP
+// 臨時關閉
+\DB::statement("SET SQL_MODE=''");
+```

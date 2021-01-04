@@ -8,12 +8,39 @@
 4. 發獎勵彩票時間道在發送
 
 ### API面
-1. 查看遊戲項目
-2. 查看遊戲規則
-3. 查看各遊戲項目歷史中獎號碼
-4. 遊玩彩票遊戲
-5. 查看已購買彩票資訊
-
+1. 系統設定
+    1. 環境設定客戶(時區)
+2. 後台管理層面
+    1. 查看遊戲項目
+        1. 清單
+        2. 新增
+        3. 看
+        4. 修改
+    2. 查看各遊戲規則
+        1. 清單
+        2. 新增
+        3. 看
+        4. 修改
+    3. 查看各遊戲開獎號碼
+        1. 清單
+        2. 重開(還未到開獎時間的)
+    4. 查看下注訂單
+        1. 清單
+3. 前台會員層面
+    1. 遊玩彩票遊戲
+        1. 遊戲規則(下注用)
+        2. 下注
+            (點數-紀錄)
+    2. 查看資訊
+        1. 遊戲介紹
+        2. 遊戲規則介紹
+        3. 開獎歷史
+        4. 我的下注紀錄
+4. 排程
+    1. 每天跑開獎期
+    2. 預開獎
+    3. 配獎
+        (點數-紀錄)
 ---
 
 ## 系統建構
@@ -24,35 +51,36 @@
 // php artisan make:migration create_lottery_game_draws_table
 // php artisan make:migration create_lottery_game_orders_table
 ```
+`PS:Entity指令可以一併建立Migration所以不自行建立`
 
 ### Entity
 ```php
 php artisan make:entity LotteryGames/GameSetting
 php artisan make:entity LotteryGames/GameRule
+php artisan make:entity LotteryGames/GameRuleType
 php artisan make:entity LotteryGames/GameDraw
 php artisan make:entity LotteryGames/GameBet
 ```
+全部選yes
 
 ### Seeder
 ```php
 php artisan make:seeder LotteryGameSeeder
 ```
 
-### Entity API用全部都yes
-```php
-// php artisan make:entity LotteryGames/Betting
-```
-
 ### Job 建立排程
 ```php
+// 建立遊戲每先所有開獎期數
 php artisan make:command LotteryGames/Lottery01/GamePeriodsJob
 // php artisan games-lottery:periods
 
+// 預開開獎期數
 php artisan make:command LotteryGames/Lottery01/GameDrawJob
 // php artisan games-lottery:draw
 
+// 開獎時間到分配獎勵
 php artisan make:command LotteryGames/Lottery01/GameRewardJob
-// php artisan games-lottery:rewar
+// php artisan games-lottery:reward
 ```
 
 ---
@@ -84,7 +112,7 @@ php artisan make:command LotteryGames/Lottery01/GameRewardJob
 > php artisan db:seed --class=LotteryGameSeeder
 > php artisan games-lottery:periods
 > php artisan games-lottery:draw
-> php artisan games-lottery:rewar
+> php artisan games-lottery:reward
 ```
 
 ---

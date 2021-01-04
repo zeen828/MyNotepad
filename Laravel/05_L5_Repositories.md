@@ -55,6 +55,12 @@ Laravel抽象結構
 ## 快速紀錄
 ### Criteria 標準條件
 ```
+// 預設標準
+vendor\prettus\l5-repository\src\Prettus\Repository\Criteria\RequestCriteria.php
+
+```
+
+```
 php artisan make:criteria Demo/Index
 ```
 建立標準條件
@@ -251,15 +257,23 @@ print_r($demo->presenter()); //It produces an output as array
     $posts = $this->repository->skipCriteria()->all();
 
 測試用
-php artisan make:criteria LotteryGames/GameSetting/Index
-php artisan make:criteria LotteryGames/GameRule/Index
+php artisan make:criteria LotteryGames/GameSetting/Admin
+php artisan make:criteria LotteryGames/GameSetting/User
+php artisan make:criteria LotteryGames/GameRuleType/Admin
+php artisan make:criteria LotteryGames/GameRuleType/User
+php artisan make:criteria LotteryGames/GameRule/Admin
+php artisan make:criteria LotteryGames/GameRule/User
+php artisan make:criteria LotteryGames/GameDraw/Admin
+php artisan make:criteria LotteryGames/GameDraw/User
 php artisan make:criteria LotteryGames/GameDraw/QueryHistory
-php artisan make:criteria LotteryGames/GameDraw/ByPeriod
-php artisan make:criteria LotteryGames/GameDraw/ByDate
-php artisan make:criteria LotteryGames/GameBet/Index
+php artisan make:criteria LotteryGames/GameBet/Admin
+php artisan make:criteria LotteryGames/GameBet/User
+php artisan make:criteria LotteryGames/GameBet/QueryRecord
+
 
 php artisan make:entity LotteryGames/GameSetting
 php artisan make:entity LotteryGames/GameRule
+php artisan make:entity LotteryGames/GameRuleType
 php artisan make:entity LotteryGames/GameDraw
 php artisan make:entity LotteryGames/GameBet
 ```
