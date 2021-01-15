@@ -104,8 +104,8 @@ N:http://localhost:8080/#/about
 ```
 Vue CLI v4.5.10
 ? Please pick a preset: Manually select features
-? Check the features needed for your project: Choose Vue version, Babel, Router, CSS Pre-processors, Linter
-? Choose a version of Vue.js that you want to start the project with 3.x (Preview)
+? Check the features needed for your project: Choose Vue version, Babel, Router, Vuex, CSS Pre-processors, Linter
+? Choose a version of Vue.js that you want to start the project with 2.x
 ? Use history mode for router? (Requires proper server setup for index fallback in production) Yes
 ? Pick a CSS pre-processor (PostCSS, Autoprefixer and CSS Modules are supported by default): Sass/SCSS (with node-sass)
 ? Pick a linter / formatter config: Standard
@@ -129,8 +129,8 @@ Vue CLI v4.5.10
 ```
 NODE_ENV=development
 VUE_APP_SECRET=envdevelopment
-//PS.前墜VUE_APP必要
 ```
+PS.前墜VUE_APP必要
 
 ### 使用範例
 ```js
