@@ -539,6 +539,17 @@ export default {
 </script>
 ```
 
+### 替換變數
+```json
+{
+    "page": "This is an {name} page."
+}
+```
+
+```html
+<h2>{{ $t('page', {name: "首頁"})}}</h2>
+```
+
 ---
 
 ## Mixins(共用函式)-->(3.0建議改用Composition API)
