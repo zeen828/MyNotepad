@@ -266,9 +266,14 @@ php artisan make:criteria LotteryGames/GameRule/User
 php artisan make:criteria LotteryGames/GameDraw/Admin
 php artisan make:criteria LotteryGames/GameDraw/User
 php artisan make:criteria LotteryGames/GameDraw/QueryHistory
+php artisan make:criteria LotteryGames/GameDraw/JobGameReward
+//php artisan make:criteria LotteryGames/GameDraw/BetDelay
 php artisan make:criteria LotteryGames/GameBet/Admin
 php artisan make:criteria LotteryGames/GameBet/User
 php artisan make:criteria LotteryGames/GameBet/QueryRecord
+
+
+php artisan make:criteria Member/User/Admin
 
 
 php artisan make:entity LotteryGames/GameSetting

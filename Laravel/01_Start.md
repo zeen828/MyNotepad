@@ -43,6 +43,25 @@
 >     php artisan make:model Model/ModelName
 > 建立Model
 
+### 特殊語法
+```php
+$article = Article::find($article_id);
+$visitors = $article->visitors + 1;
+$article->update(['visitors' => $visitors]);
+
+Article::find($article_id)->increment('visitors');
+Article::find($article_id)->increment('visitors',2);
+
+Article::find($article_id)->decrement('visitors');
+Article::find($article_id)->decrement('visitors',2);
+
+DB::table('articles')->increment('visitors');
+DB::table('articles')->decrement('visitors');
+
+Article::where('id', $article_id)->update(['visitors' => DB::raw('visitors + 1')]);
+Article::where('id', $article_id)->update(['visitors' => DB::raw('visitors - 1')]);
+```
+
 ---
 
 ## Laravel `Migrate(遷移)`

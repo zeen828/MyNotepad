@@ -69,3 +69,15 @@ composer install
 使用[mailtrap](https://mailtrap.io/)中介
 
 
+## MYSQL慢查詢
+```ini
+# 慢查尋
+slow_query_log = 1
+slow-query-log-file="C:\xampp\mysql\data\slow_query.log"
+```
+```sql
+SELECT @@slow_query_log;
+SELECT @@long_query_time;
+SET GLOBAL slow_query_log=1;
+SET GLOBAL long_query_time=2;
+```

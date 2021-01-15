@@ -7,6 +7,10 @@
 3. 預開號碼跟中獎規則,統計排率去做調整
 4. 發獎勵彩票時間道在發送
 
+### 點數種類
+Gold - (一般點數)
+Gift - (禮品點數,反水,贈點)
+
 ### API面
 1. 系統設定
     1. 環境設定客戶(時區)
@@ -16,22 +20,32 @@
         2. 新增
         3. 看
         4. 修改
-    2. 查看各遊戲規則
+    2. 查看各遊戲規則分類
         1. 清單
         2. 新增
         3. 看
         4. 修改
-    3. 查看各遊戲開獎號碼
+    3. 查看各遊戲規則
+        1. 清單
+        2. 新增
+        3. 看
+        4. 修改
+    4. 查看各遊戲開獎號碼
         1. 清單
         2. 重開(還未到開獎時間的)
-    4. 查看下注訂單
+    5. 查看下注訂單
         1. 清單
 3. 前台會員層面
-    1. 遊玩彩票遊戲
+    1. 會員
+        1. 註冊or登入
+        2. 驗證碼登入
+        3. 入點
+        4. 出點
+    2. 遊玩彩票遊戲
         1. 遊戲規則(下注用)
         2. 下注
             (點數-紀錄)
-    2. 查看資訊
+    3. 查看資訊
         1. 遊戲介紹
         2. 遊戲規則介紹
         3. 開獎歷史
@@ -41,9 +55,11 @@
     2. 預開獎
     3. 配獎
         (點數-紀錄)
+    4. 反水
 ---
 
 ## 系統建構
+php artisan make:currency
 ### Migration
 ```php
 // php artisan make:migration create_lottery_game_settings_table
@@ -81,6 +97,13 @@ php artisan make:command LotteryGames/Lottery01/GameDrawJob
 // 開獎時間到分配獎勵
 php artisan make:command LotteryGames/Lottery01/GameRewardJob
 // php artisan games-lottery:reward
+
+// 遊戲回饋點數-贈點
+php artisan make:command LotteryGames/Lottery01/GameGiveBackJob
+// php artisan games-lottery:GiveBack
+
+// 測試用
+// php artisan tests:model
 ```
 
 ---
