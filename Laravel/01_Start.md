@@ -147,3 +147,10 @@ Syntax error or access violation: 1055
 // 臨時關閉
 \DB::statement("SET SQL_MODE=''");
 ```
+
+
+this,self,parent
+這、自己、父親
+this是指向當前物件
+self是指向當前類
+parent是指向父類

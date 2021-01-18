@@ -215,6 +215,7 @@ export default {
     debug: false
   },
   // 用來註冊改變資料狀態
+  // this.$store.commit('mutations function name')
   mutations: {
     setAccessToken (state, val) {
       state.accessToken = val
@@ -239,6 +240,8 @@ export default {
     }
   },
   // 解決非同步改變共享資料
+  // 建議透過這這邊執行邏輯運算後呼叫mutations
+  // this.$store.dispatch('actions function name')
   actions: {
     ready (context) {
       console.log('Vues.store.model.action.ready')
