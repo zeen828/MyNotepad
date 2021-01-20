@@ -300,16 +300,63 @@ export default {
   computed: {
     userDebug: {
       get () {
-        return this.$store.getters['apiUser/getDebug']
+        // 取modules的值
+        return this.$store.getters['module/getDebug']
       },
       set (val) {
-        this.$store.commit('apiUser/setDebug', val)
+        // 執行mutations
+        this.$store.commit('module/setDebug', val)
       }
     }
+  },
+  mounted () {
+    // 取根的值
+    this.$store.getters.getDebug
+    // 執行actions
+    this.$store.dispatch('module/ready'),
   }
 }
 ```
 App.vue中使用範例
+
+```js
+  actions: {
+    ready (context) {
+      // 取本身的值
+      var val = context.getters.getDebug
+      // 取根的值
+      var valRoot = context.rootGetters.getDebug
+      // 取modules的值
+      var valModule = context.rootGetters['storeFintechClient/getDebug']
+      // 執行根的mutations
+      context.commit('setDebug', 'false', { root: true })
+      // 執行module的mutations
+      context.commit('storeFintechClient/setDebug', 'false', { root: true })
+      // 執行根的actions
+      context.dispatch('ready', 'false', { root: true })
+      // 執行module的actions
+      context.dispatch('storeFintechClient/ready', 'false', { root: true })
+    },
+  }
+```
+src\store\index.js中使用範例
+
+```js
+import Store from '@/store/index.js'
+// 取根的值
+var valRoot = Store.getters.getDebug
+// 取modules的值
+var valModule = Store.getters['storeFintechClient/getDebug']
+// 執行根的mutations
+Store.commit('setDebug', false)
+// 執行module的mutations
+Store.commit('storeFintechClient/setDebug', false)
+// 執行根的actions
+Store.dispatch('ready')
+// 執行module的actions
+Store.dispatch('storeFintechClient/ready')
+```
+api.js整合中使用範例
 
 > ### 同步非同步
 > #### 同步 (一個動作執行完，才作下一個動作)
