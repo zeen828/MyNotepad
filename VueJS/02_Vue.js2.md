@@ -311,6 +311,54 @@ export default {
 ```
 App.vue中使用範例
 
+> ### 同步非同步
+> #### 同步 (一個動作執行完，才作下一個動作)
+> ```js
+> import ajaxFintechUser from '@/api/fintech/user'
+>   methods: {
+>     async ready () {
+>       var that = this
+>       // 等待排隊執行
+>       try {
+>         // call api one
+>         const one = await ajaxFintechUser.getToken(that.account, that.password)
+>         console.table('第一個 回傳結果', one)
+>         window.localStorage.setItem('access_token', one.data.data.access_token)
+>         // call api two
+>         const two = await ajaxFintechUser.getRead()
+>         console.table('第二個 回傳結果', two)
+>       } catch (error) {
+>         throw new Error(error)
+>       }
+>     }
+>   }
+> ```
+> 
+> #### 非同步 (不需要等待上一個動作完成，才作下一個動作)
+> ```js
+> import ajaxFintechClient from '@/api/fintech/client'
+> import ajaxBetClient from '@/api/bet/client'
+>   methods: {
+>     ready () {
+>       var that = this
+>       // 同時執行
+>       axios.all([
+>         // call api one
+>         ajaxFintechClient.getToken(),
+>         // call api two
+>         ajaxBetClient.getToken()
+>       ]).then(axios.spread((one, two) => {
+>         // axios 回傳的資料在 data 屬性
+>         console.table('第一個 回傳結果', one)
+>         // fetch 資料可以先在 function 內作 json()
+>         console.table('第二個 回傳結果', two)
+>       })).catch((err) => {
+>         console.error(err)
+>       })
+>     }
+>   }
+> ```
+
 [參考](https://vuex.vuejs.org/zh/)
 
 ---
@@ -422,7 +470,7 @@ App.vue中使用範例
 
 ---
 
-## 多國語系
+## i18n - 多國語系
 ### 安裝
 ```
 npm install vue-i18n
@@ -435,6 +483,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+// i18n - 多國語系
 import VueI18n from 'vue-i18n'// 引入 Vue I18n
 import zh from './i18n/zh'// 存放中文語系檔
 import en from './i18n/en'// 存放英文語系檔
@@ -552,6 +601,40 @@ export default {
 ```html
 <h2>{{ $t('page', {name: "首頁"})}}</h2>
 ```
+
+---
+
+## Vue Material - 樣板
+### 安裝
+```
+npm install vue-material --save
+```
+
+```js
+import Vue from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
+
+// Vue Material - 樣板
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.min.css'
+import 'vue-material/dist/theme/default.css'
+
+Vue.use(VueMaterial)
+
+Vue.config.productionTip = false
+
+new Vue({
+  router,
+  store,
+  i18n,
+  render: h => h(App)
+}).$mount('#app')
+```
+修改/src/main.js
+
+[樣板官方](https://vuematerial.io/)
 
 ---
 

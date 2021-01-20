@@ -154,3 +154,5 @@ this,self,parent
 this是指向當前物件
 self是指向當前類
 parent是指向父類
+
+https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/109715/
