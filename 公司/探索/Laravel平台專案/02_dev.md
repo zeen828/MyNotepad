@@ -1,5 +1,88 @@
 # 公司文件 - 探索 - Laravel開發專案 - 開發紀錄
 
+# Client
+## 指令模式
+### 增加Client角色
+<details>
+<summary>展开查看</summary>
+
+1. 建立角色
+```cmd
+php artisan config:add-ban-service
+# 輸入小寫名稱 > custom
+```
+```php
+// 指令會去config\ban.php增加設定
+3 => [
+    'description' => 'custom',
+    'restrict_access_guards' => [],
+    'unique_auth_ignore_guards' => [
+        'client',
+    ],
+    'unique_auth_inherit_login_guards' => [],
+    'status' => true,
+    'allow_named' => [],
+    'unallow_named' => []
+],
+```
+
+2. 角色對應語系檔
+```php
+// 編輯語系檔 resources\lang\en\ban.php
+'release' => [
+    'global' => 'Global Service',
+    'admin' => 'Admin Service',
+    'member' => 'Member Service',
+    'custom' => 'Custom Service',
+],
+```
+</code></pre>
+</details>
+
+### 查詢Client帳號
+<details>
+<summary>展开查看</summary>
+
+預設Global Service的app id：1294583
+```cmd
+php artisan data:client-read
+# 輸入要查詢client app id > 1294583
+```
+</code></pre>
+</details>
+
+### 建立Client帳號
+<details>
+<summary>展开查看</summary>
+
+```cmd
+php artisan data:client-add
+# 輸入名稱 > Admin Service
+# 選折建立的角色 > 1
+# 保存資料 > yes
+
+php artisan data:client-add
+# 輸入名稱 > Member Service
+# 選折建立的角色 > 2
+# 保存資料 > yes
+```
+</code></pre>
+</details>
+
+### 編輯Client帳號
+<details>
+<summary>展开查看</summary>
+
+```cmd
+php artisan data:client-edit
+# 只能編輯開啟關閉，沒什麼機會用到
+```
+</code></pre>
+</details>
+
+## API模式
+待補充...
+
 ## 開發截住ID轉換
 > #### `ID編碼轉換`
 > appid和uid轉換

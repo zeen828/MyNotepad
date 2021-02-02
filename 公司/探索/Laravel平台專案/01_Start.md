@@ -19,9 +19,11 @@ PHP 7.4
 > php artisan data:client-add
 > // Admin Service, 1, yes
 > php artisan data:client-add
-> // Member Service, 1, yes
+> // Member Service, 2, yes
 > php artisan data:client-add
-> // Business Service, 1, yes
+> // Server Service, 3, yes
+> php artisan data:client-add
+> // Business Service, 4, yes
 > ```
 
 ---

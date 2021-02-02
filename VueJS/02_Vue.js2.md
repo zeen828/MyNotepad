@@ -651,6 +651,53 @@ export default {
 
 ---
 
+## component slot(組件留白)
+### 組件
+```vue
+<template>
+  <div class="test">
+    <h1>我是測試</h1>
+    <slot name='header'></slot>
+    <slot name='content'></slot>
+    <slot></slot>
+    <slot name='footer'></slot>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Test'
+}
+</script>
+```
+
+### 使用
+```vue
+<template>
+  <div class="app">
+    <Test>
+      <template v-slot:footer>我要指定name是footer的slot內容</template>
+      <template v-slot:header>我要指定name是header的slot內容</template>
+      <template>我要指定沒有name(default)的slot內容</template>
+      <template v-slot:content>我要指定name是content的slot內容</template>
+    </Test>
+  </div>
+</template>
+
+<script>
+import Test from '@/components/test/Test.vue'
+export default {
+  name: 'App',
+  components: {
+    Test
+  }
+}
+</script>
+```
+
+
+---
+
 ## Vue Material - 樣板
 ### 安裝
 ```
