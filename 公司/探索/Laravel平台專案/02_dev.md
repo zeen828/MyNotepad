@@ -43,10 +43,10 @@ php artisan config:add-ban-service
 <details>
 <summary>展开查看</summary>
 
-預設Global Service的app id：1294583
+預設Global Service的app id：1294583 > 1002212294583
 ```cmd
 php artisan data:client-read
-# 輸入要查詢client app id > 1294583
+# 輸入要查詢client app id > 1294583 > 1002212294583
 ```
 </code></pre>
 </details>
