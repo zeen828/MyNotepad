@@ -180,13 +180,13 @@ props            讀取外部傳入的屬性
                  required 規定這個屬性是不是必要存在，僅接受布林值。
                  default 設定該屬性值的預設值，必須注意一點，如果是物件，必須要用函數的方法來返回預設值。
                  validator 自定義的型別判斷。
-data()           設定預設值
 inheritAttrs     設定該元件是否繼承相關屬性，僅接受布林值
 directives       元件自身的自定義指令
 filters          元件自身定義的過濾器
 methods          設定元件內部方法
 computed         設定計算屬性
 watch            監聽工具
+data()           設定預設值
 ```
 
 ### 與生命週期有關的函數與呼叫順序

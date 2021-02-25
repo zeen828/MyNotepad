@@ -31,7 +31,14 @@ PHP 7.4
 ## 文件
 ```
 php artisan apidoc:generate
+
+php artisan apidoc:generate --force
+
+# --force 複寫原本的
 ```
+`PS.可以修改配置檔.env去產生API的正確網址`
+
+
 [參考](https://www.vnewin.com/day29-laravel-automatically-generates-api-files/)
 
 ---
