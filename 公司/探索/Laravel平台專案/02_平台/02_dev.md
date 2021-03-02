@@ -1,5 +1,7 @@
 # 公司文件 - 探索 - Laravel開發專案 - 平台 - 開發紀錄
 
+##
+
 ## 註冊會員(Member)流程
 1. 取得Client Token(Global Service)             // Auth > Get Token
 2. 取得簡訊                                     // Member > Auth > Verify Code
