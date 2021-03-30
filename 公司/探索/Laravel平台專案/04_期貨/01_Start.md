@@ -63,20 +63,27 @@
     - php artisan make:migration Website --path="database/migrations/20210319"
 2. 經銷商(Dealer)
     - php artisan make:migration Dealer --path="database/migrations/20210319"
-3. 會員(Member)
-    - php artisan make:migration Member --path="database/migrations/20210319"
-4. 會員-點數(Member_Point)
-    - php artisan make:migration MemberPoint --path="database/migrations/20210319"
-5. 商品(Binary)
+3. 會員(User)
+    - php artisan make:migration User --path="database/migrations/20210319"
+4. 會員-點數(User_Point)
+    - php artisan make:migration UserPoint --path="database/migrations/20210319"
+5. 二元商品(Binary)
     - php artisan make:migration Binary --path="database/migrations/20210319"
-6. 商品-開獎期-投注統計(Binary_Draw)
+6. 二元商品-開獎期-投注統計(Binary_Draw)
     - php artisan make:migration BinaryDraw --path="database/migrations/20210319"
 7. 會員-投注紀錄(Member_Betting)
-    - php artisan make:migration MemberBetting --path="database/migrations/20210319"
-8. 會員-點數-異動紀錄(Member_Point_Logs)
-    - php artisan make:migration MemberPointLogs --path="database/migrations/20210319"
+    - php artisan make:migration UserBetting --path="database/migrations/20210319"
+8. 會員-點數-異動紀錄(User_Point_Logs)
+    - php artisan make:migration UserPointLogs --path="database/migrations/20210319"
 9. 公告(Bulletin)
     - php artisan make:migration Bulletin --path="database/migrations/20210319"
+
+
+1. Laravel-Admin資料
+    - php artisan make:seeder LaravelAdminUserSeeder
+    - php artisan make:seeder LaravelAdminRoleSeeder
+    - php artisan make:seeder LaravelAdminPermissionsSeeder
+    - php artisan make:seeder LaravelAdminMenuSeeder
 
 ### 遊戲排程
 1. 去抓期權資料
