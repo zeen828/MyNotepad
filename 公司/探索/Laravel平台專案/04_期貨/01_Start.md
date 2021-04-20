@@ -80,10 +80,10 @@
 
 
 1. Laravel-Admin資料
-    - php artisan make:seeder LaravelAdminUserSeeder
-    - php artisan make:seeder LaravelAdminRoleSeeder
-    - php artisan make:seeder LaravelAdminPermissionsSeeder
-    - php artisan make:seeder LaravelAdminMenuSeeder
+    - php artisan make:seeder LaravelAdmin01UserSeeder
+    - php artisan make:seeder LaravelAdmin02RoleSeeder
+    - php artisan make:seeder LaravelAdmin03PermissionsSeeder
+    - php artisan make:seeder LaravelAdmin04MenuSeeder
 
 ### 遊戲排程
 1. 去抓期權資料
